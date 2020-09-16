@@ -17,8 +17,8 @@ organization_link: http://samvera.org/
 organization_link_name: samvera.org
 # this appears in the footer
 
-community_link: https://wiki.duraspace.org/display/samvera/Samvera
-community_link_name: Community Wiki
+#community_link: https://wiki.duraspace.org/display/samvera/Samvera
+#community_link_name: Community Wiki
 # this appears in the footer
 
 # github_editme_path: tomjohnson1492/documentation-theme-jekyll/blob/gh-pages/
@@ -44,7 +44,7 @@ exclude:
 
 feedback_subject_line: Jekyll documentation theme
 
-feedback_email: bess@ibiblio.org
+#feedback_email: bess@ibiblio.org
 # used as a contact email for the Feedback link in the top navigation bar
 
 # feedback_disable: true
@@ -112,14 +112,14 @@ sidebars:
 
 description: ""
 # the description is used in the feed.xml file
-url: http://elrayle.github.io/samvera_docs
+url: https://elrayle.github.io/samvera_docs
 production_url : https://elrayle.github.io/samvera_docs
 BASE_PATH : https://elrayle.github.io/samvera_docs
 
 theme: jekyll-theme-minimal
 
 # needed for sitemap.xml file only
-url: http://elrayle.github.io/samvera_docs
+url: https://elrayle.github.io/samvera_docs
 plugins:
   - jekyll-sitemap
 

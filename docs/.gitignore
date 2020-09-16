@@ -1,4 +1,7 @@
 _site
+.jekyll-metadata
 .sass-cache/
+.bundle
 generated/
-.DS_Store
+vendor/
+browse_pages.html
