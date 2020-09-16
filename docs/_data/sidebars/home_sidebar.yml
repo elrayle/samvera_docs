@@ -4,7 +4,7 @@ entries:
 - title: Sidebar Menu
   folders:
 
-  - title: New? Start Here
+  - title: Eureka -- New? Start Here
     output: web, pdf
     folderitems:
 
