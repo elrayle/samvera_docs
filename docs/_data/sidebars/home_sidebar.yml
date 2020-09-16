@@ -369,6 +369,43 @@ entries:
       url: /troubleshooting_riiif.html
       output: web
 
+      subfolders:
+      - title: 'Valkyrizing Hyrax Works'
+        output: web
+        subfolderitems:
+
+          - title: Overview Valkyrizing a Hyrax Work
+            url: /valkyrie-work-overview-valkyrizing-hyrax-work.html
+            output: web
+
+          - title: Generating a Work Resource
+            url: /valkyrie-work-generate-resource.html
+            output: web
+
+          - title: Defining Attribute Metadata for the Work Resource
+            url: /valkyrie-work-resource-metadata.html
+            output: web
+
+          - title: Dealing with extra code in the 2.7 model
+            url: /valkyrie-work-extra-model-code.html
+            output: web
+
+          - title: Understanding Valkyrie Indexing
+            url: /valkyrie-work-understanding-indexing.html
+            output: web
+
+          - title: Creating a Valkyrie Indexer for the Work Resource
+            url: /valkyrie-work-indexer.html
+            output: web
+
+          - title: Writing Custom Queries
+            url: /valkyrie-work-custom-queries.html
+            output: web
+
+          - title: New and Edit Forms for the Work Resource
+            url: /valkyrie-work-new-edit-form.html
+            output: web
+
     - title: Workflow and Mediated Deposit
       url: /workflow_and_mediated_deposit.html
       output: web
