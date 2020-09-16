@@ -112,14 +112,14 @@ sidebars:
 
 description: ""
 # the description is used in the feed.xml file
-url: http://samvera.github.io
-production_url : https://samvera.github.io
-BASE_PATH : https://samvera.github.io
+url: http://elrayle.github.io/samvera_docs
+production_url : https://elrayle.github.io/samvera_docs
+BASE_PATH : https://elrayle.github.io/samvera_docs
 
 theme: jekyll-theme-minimal
 
 # needed for sitemap.xml file only
-url: http://samvera.github.io
+url: http://elrayle.github.io/samvera_docs
 plugins:
   - jekyll-sitemap
 
