@@ -4,7 +4,7 @@ entries:
 - title: Sidebar Menu
   folders:
 
-  - title: Doh! -- New? Start Here
+  - title: New? Start Here
     output: web, pdf
     folderitems:
 
@@ -386,7 +386,7 @@ entries:
             url: /valkyrie-work-resource-metadata.html
             output: web
 
-          - title: Dealing with extra code in the 2.7 model
+          - title: Dealing with extra code in pre-3.0 Active Fedora model
             url: /valkyrie-work-extra-model-code.html
             output: web
 
@@ -404,6 +404,14 @@ entries:
 
           - title: New and Edit Forms for the Work Resource
             url: /valkyrie-work-new-edit-form.html
+            output: web
+
+          - title: Appendix - Solrizer Reference
+            url: /valkyrie-work-appendix-solrizer-reference.html
+            output: web
+
+          - title: Appendix - Stumbling Blocks
+            url: /valkyrie-work-appendix-stumbling-blocks.html
             output: web
 
     - title: Workflow and Mediated Deposit

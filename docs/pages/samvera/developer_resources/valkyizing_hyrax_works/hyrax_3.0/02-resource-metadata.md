@@ -17,25 +17,39 @@ In Hyrax Valkyrie Resources, the main way to define metadata is in a schema for 
 
 The second level keys define each attribute's name.  Under each attribute, define its characteristics including the following...
 
-* **type** - data type. Conversion tip: I made the arbitrary decision to set all ours to strings.
-* **multiple** - single vs. multiple value. Conversion tip: Set this to the same value as `multiple` in the ActiveFedora property definition.
-* **index_keys** - names of the fields in the solr document.  Conversion tip: These equate to the `index.as` settings in the 2.7 property definitions
+* **type** - data type. See [Hyrax Schema Loader](https://github.com/samvera/hyrax/blob/ca42f97ee296c9d3d62a4a007ee83e55667f4384/app/services/hyrax/simple_schema_loader.rb#L104-L119), [Valkyrie Supported Data Types](https://github.com/samvera/valkyrie/wiki/Supported-Data-Types), and [Valkyrie::Types module](https://github.com/samvera/valkyrie/blob/v2.1.1/lib/valkyrie/types.rb).  Conversion tip: I made the arbitrary decision to set all ours to `String`, except a few that were clearly dates.
+* **multiple** - single vs. multiple value. Conversion tip: Set this to the same value as `multiple` in the ActiveFedora property definition, which defaults to `multiple=true` if not specified.
+* **index_keys** - names of the fields in the solr document.  Conversion tip: These equate to the `index.as` settings in ActiveFedora property definitions.
   * append '_tesim'  to metadata attribute name for :stored_searchable (e.g. "authors_tesim")
   * append '_sim' to metadata attribute name for :facetable (e.g. "authors_sim")
-  * see more extension examples at [Solrizer Reference](https://confluence.cornell.edu/display/~elr37/Solrizer+Reference#SolrizerReference-DynamicFieldNamesgeneratedusingSolrizer). _NOTE: Some of this information is dates since Solrizer is no longer in use, but the table with Extensions based on data type and indexed as should be accurate_. 
+  * see more extension examples at [Appendix - Solrizer Reference](valkyrie-work-appendix-solrizer-reference.html). 
 * **forms** - controls how fields will show up on the new/edit form
-  * set required - Conversion tip: Set this to true if the attribute was set in self.required_fields defined in existing Hyrax::_WORK_NAME_Form class; otherwise, false
-  * set primary: Conversion tip: Set this to true if you want it to appear above the fold (i.e. when form is loaded and user has not yet pressed more button).  In our case, if field is required, I set primary to true; otherwise, false
-  * multiple - can the user enter multiple values through the form.  Conversion tip: This is generally the same as the main level value of multiple.  So this was again set to the value of multiple in the ActiveFedora property definition.        
 
-Edit `config/metadata/_WORK_RESOURCE_CLASSNAME_.yaml` to define the work resource metadata.
+<table style="margin-left: 40px">
+  <tbody>
+    <tr>
+      <th width="10%">required</th><td width="15%">true | false</td>
+      <td>Is the user required to enter a value before saving the form?  <br /><em>Conversion tip: Set this to true if the attribute was set in self.required_fields defined in existing Hyrax::_WORK_NAME_Form class; otherwise, false.</em></td>
+    </tr>
+    <tr>
+      <th>primary</th><td>true | false</td>
+      <td>Should the field appear above the fold?  <br /><em>Conversion tip: Set this to true if you want it to appear above the fold (i.e. when form is loaded and user has not yet pressed more button).  In our case, if field is required, I set primary to true; otherwise, false.</em></td>
+    </tr>
+    <tr>
+      <th>multiple</th><td>true | false</td>
+      <td>Can the user enter multiple values through the form?  <br /><em>Conversion tip: This is generally the same as the main level value of multiple.  So this was again set to the value of multiple in the ActiveFedora property definition.</em></td>
+    </tr>
+  </tbody>
+</table>
 
 <ul class='info'><li>Any attributes defined with the generator will have a basic entry generated in the metadata schema file.</li></ul>
 
-For every property statement in 2.7 Publication model (`app/model/_ACTIVE_FEDORA_WORK_MODEL_.rb`), define an entry in the schema following the pattern...
+Edit `config/metadata/_WORK_RESOURCE_CLASSNAME_.yaml` to define the work resource metadata.
+
+For every property statement in Hyrax < 3.0 version of the model (`app/model/_ACTIVE_FEDORA_WORK_MODEL_.rb`), define an entry in the schema following the pattern...
 
 ```
-   authors:
+   _metadata_attribute_name_:
     type: string
     multiple: true
     index_keys:
