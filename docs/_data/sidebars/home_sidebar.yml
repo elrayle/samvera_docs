@@ -390,6 +390,10 @@ entries:
             url: /valkyrie-work-extra-model-code.html
             output: web
 
+          - title: Custom Change Sets
+            url: /valkyrie-work-change-sets.html
+            output: web
+
           - title: Understanding Valkyrie Indexing
             url: /valkyrie-work-understanding-indexing.html
             output: web

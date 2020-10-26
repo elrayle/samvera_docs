@@ -11,20 +11,20 @@ version:
 
 ## Run generator to create all files for a 3.0 work
 
-Selected one of our existing work types (i.e. Publication) and ran the generator for it.  I appended an r to the name (i.e. Publicationr) to avoid clash with existing classes.
+Selected one of our existing work types (i.e. Publication) and ran the generator for it.  I appended an Resource to the name (i.e. PublicationResource) to avoid clash with existing classes.
 
 ```
-$ rails generate hyrax:work_resource Publicationr
-  info GENERATING VALKYRIE WORK MODEL: Publicationr
-create app/controllers/hyrax/publicationrs_controller.rb
-create config/metadata/publicationr.yaml
-create app/models/publicationr.rb
-create spec/models/publicationr_spec.rb
-create app/forms/publicationr_form.rb
+$ rails generate hyrax:work_resource PublicationResource
+  info GENERATING VALKYRIE WORK MODEL: PublicationResource
+create app/controllers/hyrax/publication_resources_controller.rb
+create config/metadata/publication_resource.yaml
+create app/models/publication_resource.rb
+create spec/models/publication_resource_spec.rb
+create app/forms/publication_resource_form.rb
 insert config/initializers/hyrax.rb
-create app/indexers/publicationr_indexer.rb
-create app/views/hyrax/publicationrs/_publicationr.html.erb
-create spec/views/publicationrs/_publicationr.html.erb_spec.rb
+create app/indexers/publication_resource_indexer.rb
+create app/views/hyrax/publication_resources/_publication_resource.html.erb
+create spec/views/publication_resources/_publication_resource.html.erb_spec.rb
 ```
 
 <ul class='info'><li>You can define attributes with the generator (e.g. attr_name:attr_type) and some of the model related changes in the next section will be generated for you.</li></ul>
@@ -32,7 +32,7 @@ create spec/views/publicationrs/_publicationr.html.erb_spec.rb
 This command creates the same work as above adding two attributes authors and issn.
 
 ```
-$ rails generate hyrax:work_resource Publicationr authors:string issn:string
+$ rails generate hyrax:work_resource PublicationResource authors:string issn:string
 ```
 
 <br>

@@ -69,7 +69,7 @@ See [basic_metadata.yaml](https://github.com/samvera/hyrax/blob/master/config/me
 
 <ul class='info'><li>Any attributes defined with the generator will have the basic respond_to test generated in the model spec.</li></ul>
 
-Edit `spec/models/publicationr_spec.rb` and add tests for attributes.  
+Edit `spec/models/publication_resource_spec.rb` and add tests for attributes.  
 
 For every property statement in 2.7 Publication model (app/model/publication.rb), define a respond_to test…
 ```
@@ -78,4 +78,4 @@ it { is_expected.to respond_to(:authors) }
 
 <br>
 <hr>
-<p><a href="valkyrie-work-generate-resource.html"><button type="button" class="btn btn-primary">Prev: Generating a Work Resource</button></a> <a href="valkyrie-work-extra-model-code.html"><button type="button" class="btn btn-primary">Next: Dealing with extra code in the 2.7 model</button></a></p>
+<p><a href="valkyrie-work-generate-resource.html"><button type="button" class="btn btn-primary">Prev: Generating a Work Resource</button></a> <a href="valkyrie-work-extra-model-code.html"><button type="button" class="btn btn-primary">Next: Dealing with extra code in pre-3.0 model</button></a></p>

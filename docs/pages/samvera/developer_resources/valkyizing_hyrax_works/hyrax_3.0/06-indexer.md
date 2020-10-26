@@ -54,7 +54,7 @@ For tests requiring that a work be indexed in solr, I use the following setup.
 
 ```
 let!(:publication) do
-  pub = FactoryBox.valkyrie_create(:publicationr, 
+  pub = FactoryBox.valkyrie_create(:publication_resource, 
                  identifier: ['VALID_IDENTIFIER'])
   solr_doc = PublicationIndexer.new(resource: pub).to_solr
   Hyrax::SolrService.new(use_valkyrie: true)

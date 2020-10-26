@@ -16,14 +16,14 @@ This is specific to our app, but as the patterns may be common, the following ar
 * Create `app/models/concerns/_MY_RESOURCE_extras.rb` as module PublicationExtras.
 * Copy in all code that isn't a property definition
 
-<ul class='info'><li>Did not copy over  <code>include ::Hyrax::WorkBehavior</code>.  The equivalent comes from the class inheriting from <code>Hyrax::Work</code>.</li></ul>
+<ul class='info'><li>Did not copy over <code>include ::Hyrax::WorkBehavior</code>.  The equivalent comes from the resource class inheriting from <code>Hyrax::Work</code> <br />(e.g. <code>class Publication < Hyrax::Work</code>).</li></ul>
 
 * Removed `self.indexer`.  Valkyrie does not automatically call an indexer when the resource is saved.  See more on this later when indexing is addressed.
 * NOT SURE how to convert `include Hyrax::IndexesLinkedMetadata` to Valkyrie equivalent.
-* NOT SURE how to convert validations to Valkyrie equivalent.
-* Temporarily, include this module in the 3.0 model (e.g. `app/model/_MY_RESOURCE_.rb)
+* Removed validations.  They will be handled with change sets.  See more on this later when change sets are addressed.
+* Include this module in the 3.0 model (e.g. `app/model/_MY_RESOURCE_.rb)
 
-<ul class='info'><li>NOTE: The intention is that all the extra stuff will either be converted to the appropriate Valkyrie equivalent or moved to a service or some other area of the app.  This will leave the resource trim. More on this later.</li></ul>
+<ul class='info'><li>NOTE: The intention is that all the extra stuff will either be converted to the appropriate Valkyrie equivalent or moved to a service or some other area of the app.  This will leave the resource trim.</li></ul>
 
 ### Test modifications
 
