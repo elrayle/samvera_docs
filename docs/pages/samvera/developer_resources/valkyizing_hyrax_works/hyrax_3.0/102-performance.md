@@ -61,5 +61,5 @@ postgres_query_service.find_by(id: publication_resources_for_postgres[idx].id) }
 ## Exploring ActiveFedora save vs. Hyrax.persister.save
 
 Detailed profiling results are available in...
-* [ActiveFedora save](/profile_af_save.html)
-* [Hyrax.persister.save](/profile_val_save_wings.html)
+* [ActiveFedora save]({{site.url}}/profile_af_save.html)
+* [Hyrax.persister.save]({{site.url}}/profile_val_save_wings.html)
