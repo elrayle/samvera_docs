@@ -33,26 +33,31 @@ The times in the table are rough wall clock times. <br />
 10 Read PublicationResources with wings       3,858.72ms      385.87ms
 10 Read PublicationResources from memory          0.07ms        0.01ms
 10 Read PublicationResources from postgres       15.42ms        1.54ms
+```
 
+<br />
 The commands being run for the performance tests are:
+
+_NOTE: Publication is an ActiveFedora::Base model_
+
 ```
 --------------------- CREATING
-Publication.new(title: ["pub #{idx}"]) }
-PublicationResource.new(title: ["pubr #{idx}"]) }
-PublicationResource.new(title: ["pubr #{idx}"]) }
-PublicationResource.new(title: ["pubr #{idx}"]) }
+af_pub1        = Publication.new(title: ["af pub 1"])
+wings_val_pub1 = PublicationResource.new(title: ["wings val pub 1"])
+mem_val_pub1   = PublicationResource.new(title: ["memory val pub 1"])
+pg_val_pub1    = PublicationResource.new(title: ["postgres val pub 1"])
 
 --------------------- SAVING
-publications_for_active_fedora[idx].save }
-Hyrax.persister.save(resource: publication_resources_for_wings[idx]) }
-memory_persister.save(resource: publication_resources_for_memory[idx]) }
-postgres_persister.save(resource: publication_resources_for_postgres[idx]) }
+af_pub1.save
+wings_id = Hyrax.persister.save(resource: wings_val_pub1).id
+mem_id   = memory_persister.save(resource: mem_val_pub1).id
+pg_id    = postgres_persister.save(resource: pg_val_pub1).id
  
 --------------------- READING
-ActiveFedora::Base.find(publications_for_active_fedora[idx].id) }
-Hyrax.query_service.find_by(id: publication_resources_for_wings[idx].id) }
-memory_query_service.find_by(id: publication_resources_for_memory[idx].id) }
-postgres_query_service.find_by(id: publication_resources_for_postgres[idx].id) }
+ActiveFedora::Base.find(af_pub1.id)
+Hyrax.query_service.find_by(id: wings_id)
+memory_query_service.find_by(id: mem_id)
+postgres_query_service.find_by(id: pg_id)
 ```
 
 ## Exploring ActiveFedora save vs. Hyrax.persister.save
