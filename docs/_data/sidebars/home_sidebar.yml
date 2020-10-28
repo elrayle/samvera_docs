@@ -52,3 +52,6 @@ entries:
             url: /valkyrie-work-appendix-stumbling-blocks.html
             output: web
 
+          - title: Appendix - Performance
+            url: /valkyrie-work-appendix-performance.html
+            output: web
