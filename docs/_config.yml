@@ -4,10 +4,10 @@
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
 
-topnav_title: Samvera Community Knowledge Base
+topnav_title: Samvera Community - Hyrax-Valkyrization
 # this appears on the top navigation bar next to the home button
 
-site_title: Samvera Community Knowledge Base
+site_title: Samvera Community - Hyrax-Valkyrization
 # this appears in the html browser tab for the site title (seen mostly by search engines, not users)
 
 company_name: Samvera Community
@@ -116,6 +116,7 @@ url: https://elrayle.github.io/samvera_docs
 production_url : https://elrayle.github.io/samvera_docs
 BASE_PATH : https://elrayle.github.io/samvera_docs
 
+#theme: jekyll-theme-minimal
 theme: jekyll-theme-minimal
 
 # needed for sitemap.xml file only
