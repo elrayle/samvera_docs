@@ -47,3 +47,33 @@ The new form displays and allows for setting field values.  It saves and appears
 See [Issue #4559](https://github.com/samvera/hyrax/issues/4559) for more information.
 
 <hr>
+
+### resource requires a special process to create in tests
+
+Because resources do not respond to the save method, there needed to be a different strategy for saving resources on :create.  This is already written and you can use it in your tests.
+
+Simply use `valkyrie_create` in place of `create`.
+```
+let(:resource) valkyrie_create(:my_resource_work_factory)
+```
+
+_NOTE: You can still use `build` when you don't need to save the resource._
+
+<hr>
+
+### no reload of resources -- impacts testing
+
+If reload is called in application code, it should be refactored.
+
+Testing does have the need to 'reload' when the resource changes in the setup process after it was created.  There are several ways to this.  The simplest is to use the query service at the start of the test to load the resource.
+
+```
+let(:resource) valkyrie_create(:my_resource_work_factory)
+# some other setup happens that changes `resource`
+it 'tests something' do
+  resource = Hyrax.query_service.find_by(id: resource.id)
+  # expect tests
+end
+```
+
+<hr>
