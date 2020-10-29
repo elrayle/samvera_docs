@@ -21,7 +21,7 @@ toc: false
            <div class="panel-body">
                <h4>Start here.</h4>
                <p>Hyrax-Valkyrization</p>
-               <a href="/valkyrie-work-overview-valkyrizing-hyrax-work.html" class="btn btn-primary">Learn More</a>
+               <a href="{{site.url}}/valkyrie-work-overview-valkyrizing-hyrax-work.html" class="btn btn-primary">Learn More</a>
            </div>
        </div>
    </div>
